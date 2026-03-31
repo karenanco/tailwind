@@ -1,72 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi archivo prueba</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-clifford: #da373d;
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPA Estudio | Arquitectura y Especialidades</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                height: {
+                    'screen-v': '100vh', // Altura completa de la ventana
+                },
+                keyframes: {
+                    parpadeo: {
+                        '0%, 100%': { opacity: 1 },
+                        '50%': { opacity: 0 },
+                    },
+                    subir: {
+                        '0%': { transform: 'translateY(20px)', opacity: 0 },
+                        '100%': { transform: 'translateY(0)', opacity: 1 },
+                    }
+                },
+                animation: {
+                    'parpadeo-lento': 'parpadeo 1.5s ease-in-out infinite',
+                    'entrada-suave': 'subir 1s ease-out forwards',
+                }
+            }
+        }
+    }
+</script>
 </head>
-<body>
 
-<section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col">
-      <div class="h-1 bg-gray-200 rounded overflow-hidden">
-        <div class="w-24 h-full bg-indigo-500"></div>
-      </div>
-      <div class="flex flex-wrap sm:flex-row flex-col py-6 mb-12">
-        <h1 class="sm:w-2/5 text-gray-900 font-medium title-font text-2xl mb-2 sm:mb-0 text-center">Gato en el árbol</h1>
-        <p class="sm:w-3/5 leading-relaxed text-base sm:pl-10 pl-0">Esto es un pequeño recuento.</p>
-      </div>
+
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        
+        <div class="text-2xl font-bold tracking-wider text-slate-800">
+            SPA <span class="font-light">ESTUDIO</span>
+        </div>
+
+        <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+            <a href="#" class="hover:text-blue-600 transition">Portafolio</a>
+            <a href="#" class="hover:text-blue-600 transition">Contacto</a>
+        </div>
+
     </div>
-    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-      <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="assets/img/gato1.jpg">
-        </div>
-        <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Una muy bonita imagen</h2>
-        <p class="text-base leading-relaxed mt-2">Gitigati gatopelao-parecepescao. Besos y abrazos.</p>
-        <a class="text-indigo-500 inline-flex items-center mt-3">Ver más
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="assets/img/gato2.jpg">
-        </div>
-        <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Jiuuu</h2>
-        <p class="text-base leading-relaxed mt-2">Un gato bello, precioso, hermoso.</p>
-        <a class="text-indigo-500 inline-flex items-center mt-3">Ver menos.
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-      <div class="p-4 md:w-1/3 sm:mb-0 mb-6">
-        <div class="rounded-lg h-64 overflow-hidden">
-          <img alt="content" class="object-cover object-center h-full w-full" src="assets/img/gato3.jpg">
-        </div>
-        <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Bello, bello como el sol</h2>
-        <p class="text-base leading-relaxed mt-2">Basura que rellenar.</p>
-        <a class="text-indigo-500 inline-flex items-center mt-3">No veai ná.
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+  </nav>
 
-
-
+  <section class="relative h-screen-v w-full overflow-hidden">
     
+    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format&fit=crop" 
+         alt="Fondo Arquitectura" 
+         class="absolute inset-0 w-full h-full object-cover z-0">
+
+    <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+    <div class="relative z-20 h-full flex flex-col items-center justify-center text-center px-4 animate-entrada-suave">
+        
+        <img src="assets/img/spa.png" 
+             alt="SPA Estudio Logo" 
+             class="h-24 md:h-32 w-auto mb-10 mb-8 object-contain">
+
+        <div class="bg-yellow-400 text-slate-900 p-6 md:p-8 rounded-xl shadow-lg animate-parpadeo-lento max-w-2xl mx-auto">
+            
+            <p class="text-lg md:text-xl font-medium opacity-90">
+                Diseño de arquitectura y especialidades
+            </p>
+            
+            <p class="text-lg md:text-xl font-medium opacity-90">
+                de proyectos públicos y privados
+            </p>
+
+        </div>
+
+    </div>
+  </section>
+  
 </body>
 </html>
