@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA Estudio | Portafolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.3/photoswipe.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.3/umd/photoswipe.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.3/umd/photoswipe-lightbox.umd.min.js"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-wider text-slate-800">
+                SPA <span class="font-light">ESTUDIO</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="index.html" class="hover:text-yellow-500 transition">Inicio</a>
+                <a href="index.html#contacto" class="hover:text-yellow-500 transition">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-light italic text-slate-900">Nuestras Obras</h2>
+                <div class="w-12 h-1 bg-yellow-400 mx-auto mt-4"></div>
+            </div>
+
+            <div id="mi-galeria" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <a href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200" 
+                   data-pswp-width="1200" 
+                   data-pswp-height="800" 
+                   class="group relative overflow-hidden rounded-xl aspect-square bg-slate-200 block">
+                    
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800" 
+                         class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 scale-110 group-hover:scale-100">
+                    
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-colors duration-500">
+                        <h3 class="text-white text-xl font-light tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 drop-shadow-lg">
+                            Casa Mirador
+                        </h3>
+                    </div>
+                </a>
+
+                <a href="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200" 
+                   data-pswp-width="1200" 
+                   data-pswp-height="800" 
+                   class="group relative overflow-hidden rounded-xl aspect-square bg-slate-200 block">
+                    
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800" 
+                         class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 scale-110 group-hover:scale-100">
+                    
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-colors duration-500">
+                        <h3 class="text-white text-xl font-light tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 drop-shadow-lg">
+                            Edificio SPA
+                        </h3>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+   <script>
+    // Esperamos a que la página cargue totalmente
+        window.onload = function() {
+            const lightbox = new PhotoSwipeLightbox({
+                gallery: '#mi-galeria',
+                children: 'a',
+                // Usamos la versión cargada globalmente
+                pswpModule: PhotoSwipe 
+            });
+            lightbox.init();
+            console.log("Galería activada con éxito");
+        };
+    </script>
+
+</body>
+</html>
